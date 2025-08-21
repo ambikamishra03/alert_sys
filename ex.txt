@@ -1,0 +1,39 @@
+Entry Data Format
+{
+"punit.mittal.pm@gmail.com":{"2025-01-02":{...details},"2025-01-03":{..details},....},
+"harshit.agarwal@gmail.com":{"2025-01-02":{...details},"2025-01-03":{...details},....}
+............
+........... and so on
+}
+
+
+Leave Communication Data
+
+{
+email1:{wfh:[detail1,detail2,....],leave:[detail1,detail2,....]},
+email2:{leave:[detail1,detail2,....],wfh:[detail1,detail2,....],officail_travel:[detail1,detail2,....]},
+........
+.......
+}
+
+
+
+
+
+//Next Step
+if any user has marked as leave,wfh,official_travel on any date in AD(Entry Book) but for that particular date there is no any appplication in LA(Leave application data).create alert message for each users for all date which has mismatch data.
+eg-
+Hi Bhavesh, 
+    1. you were absent on following dates:- 2025-02-02,....
+    2. You were WFH on following dates:- 2025-02-02,....
+    3. you were on officail travel on following dates:- date1,date2,date3...
+
+create the above alert for all users(check by email) and save it in a text file 
+
+//weekends(saturday, sunday) must be excluded
+// holiday also must be excluded
+// if LA and AD reason matches then exclude it
+
+{email1:{wfh:[date1,date3..],leave:[date1,date2],official travel:[date1,date2...]},email2:{wfh:[],leave:[],officail travel:[]}}
+
+save in filteredData.txt
